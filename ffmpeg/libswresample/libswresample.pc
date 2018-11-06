@@ -1,0 +1,14 @@
+prefix=/Users/luke/work_dev/third_party_build/ffmpeg/final/armv7-a
+exec_prefix=${prefix}
+libdir=/Users/luke/work_dev/third_party_build/ffmpeg/final/armv7-a/lib
+includedir=/Users/luke/work_dev/third_party_build/ffmpeg/final/armv7-a/include
+
+Name: libswresample
+Description: FFmpeg audio resampling library
+Version: 3.1.100
+Requires: libavutil >= 56.14.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lswresample -lm
+Libs.private: 
+Cflags: -I${includedir}
