@@ -56,7 +56,7 @@ X86_64_PREBUILT=$NDK/toolchains/x86_64-4.9/prebuilt/$OS
 # MIPS64_CROSS_PREFIX=$MIPS64_PREBUILT/bin/$HOST-
 
 if [ "$FFMPEG_VERSION" = "" ]; then
-    FFMPEG_VERSION="3.3.2"
+    FFMPEG_VERSION="4.0.2"
 fi
 if [ ! -d "ffmpeg-${FFMPEG_VERSION}" ]; then
     echo "Downloading ffmpeg-${FFMPEG_VERSION}.tar.bz2"
@@ -73,7 +73,7 @@ function build_one
 {
 
 if [ "$(uname)" == "Darwin" ]; then
-    brew install yasm nasm automake gettext
+    #brew install yasm nasm automake gettext
     export PATH="/usr/local/opt/gettext/bin:$PATH"
 else
     sudo apt-get update
@@ -207,12 +207,12 @@ fi
     \
     --disable-demuxers \
     --disable-muxers \
-    --enable-demuxer='mp3,ogg,flac,ape,wav' \
-    --enable-parser='ape,flac' \
+    --enable-demuxer='mp3,ogg,flac,ape,wav,amr,amrnb,amrwb' \
+    --enable-parser='ape,flac,opus' \
     \
     --disable-encoders \
     --disable-decoders \
-    --enable-decoder='mp3,flac,vorbis,ape,pcm_s16be,pcm_s16be_planar,pcm_s16le,pcm_s16le_planar' \
+    --enable-decoder='mp3,flac,vorbis,ape,pcm_s16be,pcm_s16be_planar,pcm_s16le,pcm_s16le_planar,opus,amr_nb_at,amrnb,amrwb' \
     \
     --disable-doc \
     $ADDITIONAL_CONFIGURE_FLAG

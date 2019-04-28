@@ -45,13 +45,13 @@ CONFIGURE_FLAGS="--enable-cross-compile \
     --enable-protocol=file,http \
     \
     --disable-demuxers \
-    --enable-demuxer=mp3,ogg,flac,ape,wav \
+    --enable-demuxer=mp3,ogg,flac,ape,wav,amr,amrnb,amrwb \
     \
     --disable-parsers \
-    --enable-parser=ape,flac \
+    --enable-parser=ape,flac,opus \
     \
     --disable-decoders \
-    --enable-decoder=mp3,flac,vorbis,ape,pcm_s16be,pcm_s16be_planar,pcm_s16le,pcm_s16le_planar \
+    --enable-decoder=mp3,flac,vorbis,ape,pcm_s16be,pcm_s16be_planar,pcm_s16le,pcm_s16le_planar,opus,amr_nb_at,amrnb,amrwb  \
     \
     --disable-doc "
 
