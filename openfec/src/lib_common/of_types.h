@@ -35,6 +35,7 @@
 #ifndef OF_TYPES
 #define OF_TYPES
 
+#include <basetsd.h>
 
 #ifndef __cplusplus
 #ifndef bool

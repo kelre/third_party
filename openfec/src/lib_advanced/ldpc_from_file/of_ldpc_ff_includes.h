@@ -37,7 +37,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include <time.h>	/* for timersub */
+#ifdef WIN32
+#include <time.h>
+#else
+#include <sys/time.h>
+#endif
+
 
 #include "../../lib_common/of_openfec_api.h"
 
